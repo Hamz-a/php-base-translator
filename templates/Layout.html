@@ -14,23 +14,28 @@
 </head>
 
 <body>
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            {% for item in menuItems %}
-            <li class="navbar-item"><a class="navbar-link" href="{{item.href}}">{{item.text}}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-</nav>
-
 <div class="container">
     <div class="row">
-        <div class="one-half column" style="margin-top: 2%">
-            {% block content %}
-            {% endblock %}
+        <div class="four columns">
+            <label for="binary">Binary</label>
+            <textarea class="u-full-width" id="binary" placeholder="binary"></textarea>
+            <button>decode</button>
         </div>
+        <div class="four columns">
+            <label for="decimal">Decimal</label>
+            <textarea class="u-full-width" id="decimal" placeholder="decimal"></textarea>
+            <button>decode</button>
+        </div>
+        <div class="four columns">
+            <label for="Hexadecimal">Hexadecimal</label>
+            <textarea class="u-full-width" id="hexadecimal" placeholder="hexadecimal"></textarea>
+            <button>decode</button>
+        </div>
+    </div>
+    <div class="row">
+        <label for="text">Text</label>
+        <textarea class="u-full-width" id="text" placeholder="text"></textarea>
+        <button>encode</button>
     </div>
 </div>
 </body>

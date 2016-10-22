@@ -6,7 +6,7 @@ use Http\Request;
 use Http\Response;
 use BaseTranslator\Template\FrontendRenderer;
 
-class Home {
+class HomeController {
     private $request;
     private $response;
     private $renderer;
@@ -18,10 +18,7 @@ class Home {
     }
 
     public function show() {
-        $data = [
-            'name' => $this->request->getParameter('name', 'unknown'),
-        ];
-        $html = $this->renderer->render('Home', $data);
+        $html = $this->renderer->render('Home');
         $this->response->setContent($html);
     }
 }

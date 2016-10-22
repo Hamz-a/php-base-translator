@@ -6,6 +6,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 error_reporting(E_ALL);
 
+//$environment = 'production';
 $environment = 'development';
 
 $whoops = new \Whoops\Run;

@@ -13,6 +13,7 @@ class Binary implements Translator {
     public function decode($input, $delimiter = ' ') {
         $bin = str_replace($delimiter, '', $input);
         $hex = base_convert($bin, 2, 16);
+        $hex = (strlen($hex) % 2 == 0) ? $hex : '0' . $hex;
         return hex2bin($hex);
     }
 }

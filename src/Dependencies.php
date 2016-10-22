@@ -49,4 +49,24 @@ $injector->share('BaseTranslator\Page\FilePageReader');
 $injector->alias('BaseTranslator\Menu\MenuReader', 'BaseTranslator\Menu\ArrayMenuReader');
 $injector->share('BaseTranslator\Menu\ArrayMenuReader');
 
+
+// Translator dependencies
+$injector->share('BaseTranslator\Translators\Base64');
+$injector->share('BaseTranslator\Translators\Binary');
+$injector->share('BaseTranslator\Translators\Decimal');
+$injector->share('BaseTranslator\Translators\Hexadecimal');
+$injector->share('BaseTranslator\Translators\Octal');
+$injector->share('BaseTranslator\Translators\Text');
+
+$injector->share('BaseTranslator\Translators\Translate');
+$injector->define('BaseTranslator\Translators\Translate', [[
+    'BaseTranslator\Translators\Base64',
+    'BaseTranslator\Translators\Binary',
+    'BaseTranslator\Translators\Decimal',
+    'BaseTranslator\Translators\Hexadecimal',
+    'BaseTranslator\Translators\Octal',
+    'BaseTranslator\Translators\Text',
+]]);
+
+
 return $injector;

@@ -11,6 +11,7 @@ class Hexadecimal implements Translator {
 
     public function decode($input, $delimiter = ' ') {
         $hex = str_replace($delimiter, '', $input);
+        $hex = (strlen($hex) % 2 == 0) ? $hex : '0' . $hex;
         return hex2bin($hex);
     }
 }
