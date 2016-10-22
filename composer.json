@@ -16,7 +16,6 @@
     "patricklouys/http": "v1.4.0",
     "nikic/fast-route": "v1.0.1",
     "rdlowrey/auryn": "v1.4.0",
-    "mustache/mustache": "v2.11.1",
     "twig/twig": "v1.26.1"
   },
   "autoload": {

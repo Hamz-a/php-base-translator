@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd6234800712bcd1038fdf5973abf6b3",
-    "content-hash": "c908917eae69010180ee92014e7d0fa9",
+    "hash": "5d9a38101d5490f589139d0582148c32",
+    "content-hash": "f803819e55e109a9690c3ee7ff076a2e",
     "packages": [
         {
             "name": "filp/whoops",
@@ -66,52 +66,6 @@
                 "zf2"
             ],
             "time": "2016-10-11 15:32:23"
-        },
-        {
-            "name": "mustache/mustache",
-            "version": "v2.11.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/a3f6d55996dd28b58f3a909d474189a3c1aa693f",
-                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~1.11",
-                "phpunit/phpunit": "~3.7|~4.0|~5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mustache": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
-                }
-            ],
-            "description": "A Mustache implementation in PHP.",
-            "homepage": "https://github.com/bobthecow/mustache.php",
-            "keywords": [
-                "mustache",
-                "templating"
-            ],
-            "time": "2016-07-31 06:18:27"
         },
         {
             "name": "nikic/fast-route",
