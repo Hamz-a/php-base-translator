@@ -29,22 +29,19 @@ $injector->alias('BaseTranslator\Template\Renderer', 'BaseTranslator\Template\Tw
 $injector->alias('BaseTranslator\Template\FrontendRenderer', 'BaseTranslator\Template\FrontendTwigRenderer');
 
 // Translator dependencies
-$injector->share('BaseTranslator\Translators\Base64');
-$injector->share('BaseTranslator\Translators\Binary');
-$injector->share('BaseTranslator\Translators\Decimal');
-$injector->share('BaseTranslator\Translators\Hexadecimal');
-$injector->share('BaseTranslator\Translators\Octal');
-$injector->share('BaseTranslator\Translators\Text');
-
-$injector->share('BaseTranslator\Translators\Translate');
-$injector->define('BaseTranslator\Translators\Translate', [[
+$translators = [
     'BaseTranslator\Translators\Base64',
     'BaseTranslator\Translators\Binary',
     'BaseTranslator\Translators\Decimal',
     'BaseTranslator\Translators\Hexadecimal',
     'BaseTranslator\Translators\Octal',
     'BaseTranslator\Translators\Text',
-]]);
+];
 
+$injector->share('BaseTranslator\Translators\Translate');
+foreach($translators as $translator) {
+    $injector->share($translator);
+}
+$injector->define('BaseTranslator\Translators\Translate', [$translators]);
 
 return $injector;

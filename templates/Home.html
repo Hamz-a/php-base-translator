@@ -1,4 +1,41 @@
-{% extends "Layout.html" %}
-{% block content %}
-    <p>How may I help you {{name}}?</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Base Translator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/skeleton.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+
+<body>
+<div class="container">
+    {% for translator in translators %}
+        {% if loop.index == 1 or loop.index is divisibleby(4) %}
+            <div class="row">
+        {% endif %}
+            <div class="four columns">
+                <label for="{{translator}}">{{translator|title}}</label>
+                <textarea class="u-full-width" id="{{translator}}" placeholder="{{translator}}"></textarea>
+                <button>decode</button>
+            </div>
+        {% if loop.index is divisibleby(3) or loop.last %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="row">
+        <label for="text">Text</label>
+        <textarea class="u-full-width" id="text" placeholder="text"></textarea>
+        <button>encode</button>
+    </div>
+</div>
+
+<script src="/javascript/ajax.js"></script>
+</body>
+</html>

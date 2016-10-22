@@ -23,21 +23,23 @@
                     updateFields(JSON.parse(xhr.responseText));
                 }
             }
-        }
+        };
 
         xhr.send('data=' + encodeURIComponent(value));
     };
 
     // Add click event listener to all buttons
-    for(var i = 0; i < buttons.length; i++) {
+    for(var i = 0; i < buttons.length; ++i) {
         buttons[i].addEventListener('click', clickHandler);
     }
 
     // Update fields
     var updateFields = function(data) {
-        document.getElementById('binary').value = data["binary"];
-        document.getElementById('decimal').value = data["decimal"];
-        document.getElementById('hexadecimal').value = data["hexadecimal"];
-        document.getElementById('text').value = data["text"];
+        var textareas = document.getElementsByTagName('textarea');
+
+        // Loop through each textarea and update the field
+        for(var i = 0; i < textareas.length; ++i) {
+            textareas[i].value = data[textareas[i].id];
+        }
     };
 })();

@@ -34,4 +34,8 @@ class Translate implements Translator {
 
         return $result;
     }
+
+    public function getAvailableTranslators(): array {
+        return array_keys($this->translators);
+    }
 }
