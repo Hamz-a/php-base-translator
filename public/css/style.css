@@ -5,6 +5,7 @@
 textarea {
     min-height: 12rem;
     margin-bottom: 0;
+    resize: none;
 }
 
 button {
