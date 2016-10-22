@@ -7,15 +7,16 @@ A simple and minimalistic base translator built with php and a few lines of java
 
 ## Installation
 
-1. Download the project:
+0x00 Download the project:
 ```
 git clone https://github.com/Hamz-a/php-base-translator.git
 ```
 
-2. Fetch dependencies:
+0x01 Fetch dependencies:
 ```
 composer update
 ```
+
 
 ## License
 
