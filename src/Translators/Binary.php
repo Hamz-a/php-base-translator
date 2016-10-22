@@ -5,8 +5,12 @@ namespace BaseTranslator\Translators;
 class Binary implements Translator {
     public function encode($input, $delimiter = ' ') {
         $hex = bin2hex($input);
-        $bin = base_convert($hex, 16, 2);
-        $bin_arr = str_split($bin, 8);
+        $hex_arr = str_split($hex, 2);
+        $bin_arr = array_map(function($h) {
+            $bin = base_convert($h, 16, 2);
+            return str_pad($bin, 8, '0', STR_PAD_LEFT);
+        }, $hex_arr);
+
         return implode($delimiter, $bin_arr);
     }
 
