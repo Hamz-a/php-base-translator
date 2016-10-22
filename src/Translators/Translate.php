@@ -15,7 +15,7 @@ class Translate implements Translator {
         $result = [];
 
         foreach($this->translators as $name => $translator) {
-            $result[$name] = $translator->encode($value);
+            $result[$name] = $this->removeNastyBytes($translator->encode($value));
         }
 
         return $result;
@@ -28,7 +28,7 @@ class Translate implements Translator {
         if(isset($this->translators[$method])) {
             $decoded = $this->translators[$method]->decode($value);
             foreach ($this->translators as $name => $translator) {
-                $result[$name] = $translator->encode($decoded);
+                $result[$name] = $this->removeNastyBytes($translator->encode($decoded));
             }
         }
 
@@ -37,5 +37,9 @@ class Translate implements Translator {
 
     public function getAvailableTranslators(): array {
         return array_keys($this->translators);
+    }
+
+    public function removeNastyBytes($input) {
+        return preg_replace('~[^\x20-\x7e]~', ' ', $input);
     }
 }

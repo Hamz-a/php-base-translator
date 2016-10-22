@@ -25,12 +25,7 @@ class TranslateController {
     }
 
     public function decode($params) {
-        try {
-            $data = $this->translate->decode($this->request->getParameter('data'), $params['method']);
-        } catch (Exception $e) { // TODO: fine tuning
-            $this->response->setStatusCode(500);
-            return $this->response->setContent('Random error');
-        }
+        $data = $this->translate->decode($this->request->getParameter('data'), $params['method']);
         $this->response->setHeader('Content-Type', 'application/json');
         $this->response->setContent(json_encode($data));
     }
