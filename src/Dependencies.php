@@ -32,7 +32,7 @@ $injector->alias('BaseTranslator\Template\FrontendRenderer', 'BaseTranslator\Tem
 $translators = [
     'BaseTranslator\Translators\Base64',
     'BaseTranslator\Translators\Binary',
-    'BaseTranslator\Translators\Decimal',
+    'BaseTranslator\Translators\Character',
     'BaseTranslator\Translators\Hexadecimal',
     'BaseTranslator\Translators\Octal',
     'BaseTranslator\Translators\Text',
