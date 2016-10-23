@@ -7,7 +7,9 @@ class Translate implements Translator {
 
     public function __construct(array $translators) {
         foreach($translators as $translator) {
-            $this->translators[basename(strtolower($translator))] = new $translator;
+            $path = explode('\\', strtolower($translator));
+            $name =  array_pop($path);
+            $this->translators[$name] = new $translator;
         }
     }
 
