@@ -17,7 +17,7 @@ git clone https://github.com/Hamz-a/php-base-translator.git
 
 0x01 Fetch dependencies:
 ```
-composer update
+composer install
 ```
 
 
