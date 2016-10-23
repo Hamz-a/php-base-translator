@@ -20,6 +20,10 @@ git clone https://github.com/Hamz-a/php-base-translator.git
 composer install
 ```
 
+0x02 Go to the `public` folder and run the built-in web server:
+```
+php -S localhost:80
+```
 
 ### Docker compose
 0x00 Download the project:
