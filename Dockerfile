@@ -1,4 +1,4 @@
-FROM php:7.0-apache
+FROM php:7.0-cli
 
 WORKDIR /var/www/
 
@@ -12,11 +12,6 @@ RUN php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d8
 RUN php composer-setup.php --filename=composer --install-dir=/bin
 RUN php -r "unlink('composer-setup.php');"
 
-# Replace default apache config file
-COPY 000-default.conf /etc/apache2/sites-enabled/
-
-# Enable modrewrite
-RUN a2enmod rewrite
 
 # Copy required files
 COPY composer* ./
@@ -26,3 +21,6 @@ COPY public public/
 
 # Install dependencies
 RUN composer install
+
+# Run application
+CMD php -S 0.0.0.0:80 -t public/
